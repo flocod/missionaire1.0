@@ -16,26 +16,32 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      title: 'What is salvation?',
+      label: 'and how can I receive it through Jesus Christ?',
+      action: 'What is salvation and how can I receive it through Jesus Christ?',
     },
     {
-      title: 'Write code to',
-      label: `demonstrate djikstra's algorithm`,
-      action: `Write code to demonstrate djikstra's algorithm`,
+      title: 'How can I repent',
+      label: 'and be forgiven for my sins?',
+      action: 'How can I repent and be forgiven for my sins?',
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      title: 'What does it mean to be born again',
+      label: 'and how do I experience a new life in Christ?',
+      action: 'What does it mean to be born again and how do I experience a new life in Christ?',
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'How do I give my life',
+      label: 'to Jesus and follow Him?',
+      action: 'How do I give my life to Jesus and follow Him?',
+    },
+    {
+      title: 'About Us',
+      label: 'Who is Christian Missionary Fellowship International?',
+      action: 'About Us - Who is Christian Missionary Fellowship International?',
     },
   ];
+
 
   return (
     <div className="grid sm:grid-cols-2 gap-2 w-full">

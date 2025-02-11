@@ -5,11 +5,18 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import './globals.css';
 
+// export const metadata: Metadata = {
+//   metadataBase: new URL('https://chat.vercel.ai'),
+//   title: 'Next.js Chatbot Template',
+//   description: 'Next.js chatbot template using the AI SDK.',
+// };
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  metadataBase: new URL('https://cmfi.org'),
+  title: 'Christian Missionary Fellowship International (CMFI)',
+  description: 'CMFI is a community committed to sharing God’s saving love and making disciples for the Lord Jesus Christ. Join us in our mission to reach 250 nations by 2065.',
 };
+
 
 export const viewport = {
   maximumScale: 1, // Disable auto-zoom on mobile Safari

@@ -7,7 +7,7 @@ config({
   path: '.env.local',
 });
 
-const runMigrate = async () => {
+export const runMigrate = async () => {
   if (!process.env.POSTGRES_URL) {
     throw new Error('POSTGRES_URL is not defined');
   }
@@ -25,8 +25,3 @@ const runMigrate = async () => {
   process.exit(0);
 };
 
-runMigrate().catch((err) => {
-  console.error('❌ Migration failed');
-  console.error(err);
-  process.exit(1);
-});

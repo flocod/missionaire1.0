@@ -4,6 +4,8 @@ import Credentials from 'next-auth/providers/credentials';
 
 import { getUser } from '@/lib/db/queries';
 
+import { runMigrate } from '@/lib/db/migrate';
+
 import { authConfig } from './auth.config';
 
 interface ExtendedSession extends Session {
@@ -21,6 +23,7 @@ export const {
     Credentials({
       credentials: {},
       async authorize({ email, password }: any) {
+
         const users = await getUser(email);
         if (users.length === 0) return null;
         // biome-ignore lint: Forbidden non-null assertion.
