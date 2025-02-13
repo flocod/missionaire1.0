@@ -1,5 +1,6 @@
-import { openai } from '@ai-sdk/openai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { fireworks } from '@ai-sdk/fireworks';
+import { createOpenAI } from '@ai-sdk/openai';
 import {
   customProvider,
   extractReasoningMiddleware,
@@ -8,16 +9,25 @@ import {
 
 export const DEFAULT_CHAT_MODEL: string = 'chat-model-small';
 
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+});
+
+const openai = createOpenAI({
+  compatibility: 'strict',
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 export const myProvider = customProvider({
   languageModels: {
-    'chat-model-small': openai('gpt-4o-mini'),
-    'chat-model-large': openai('gpt-4o'),
+    'chat-model-small': google('gemini-1.5-pro-latest'), // Correction ici
+    'chat-model-large': google('gemini-1.5-pro-latest'), // Correction ici
     'chat-model-reasoning': wrapLanguageModel({
       model: fireworks('accounts/fireworks/models/deepseek-r1'),
       middleware: extractReasoningMiddleware({ tagName: 'think' }),
     }),
-    'title-model': openai('gpt-4-turbo'),
-    'block-model': openai('gpt-4o-mini'),
+    'title-model': google('gemini-1.5-pro-latest'), // Correction ici
+    'block-model': google('gemini-1.5-pro-latest'), // Correction ici
   },
   imageModels: {
     'small-model': openai.image('dall-e-2'),
@@ -34,12 +44,12 @@ interface ChatModel {
 export const chatModels: Array<ChatModel> = [
   {
     id: 'chat-model-small',
-    name: 'Small model',
+    name: 'Small model (Gemini 1.5 Pro)',
     description: 'Small model for fast, lightweight tasks',
   },
   {
     id: 'chat-model-large',
-    name: 'Large model',
+    name: 'Large model (Gemini 1.5 Pro)',
     description: 'Large model for complex, multi-step tasks',
   },
   {
@@ -48,3 +58,4 @@ export const chatModels: Array<ChatModel> = [
     description: 'Uses advanced reasoning',
   },
 ];
+

@@ -7,13 +7,13 @@ export const Overview = () => {
   return (
     <motion.div
       key="overview"
-      className="max-w-3xl mx-auto md:mt-20"
+      className="w-full md:max-w-3xl mx-auto md:mt-20"
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ delay: 0.5 }}
     >
-      <div className="rounded-xl p-6 flex flex-col gap-8 leading-relaxed text-center max-w-xl">
+      {/* <div className="rounded-xl p-6 flex flex-col gap-8 leading-relaxed text-center w-full md:max-w-xl">
         <p className="flex flex-row justify-center gap-4 items-center">
           <MessageIcon size={32} />
         </p>
@@ -26,17 +26,9 @@ export const Overview = () => {
           <strong>Our Mission:</strong> We are a community bonded to the Lord Jesus and to one another, reaching out to those who
           have yet to know Him. We are called to make disciples and contribute to God&apos;s global purposes.
         </p>
-        {/* <p>
-          <strong>Core Values:</strong>
-        </p>
-        <ul className="list-disc list-inside text-left mx-auto max-w-sm">
-          <li><strong>Christian:</strong> Striving for Christlikeness in all things.</li>
-          <li><strong>Missionary:</strong> Raising, training, and sending missionaries.</li>
-          <li><strong>Fellowship:</strong> Living in deep communion with the Lord and one another.</li>
-          <li><strong>International:</strong> Reaching beyond Cameroon to the ends of the earth.</li>
-        </ul> */}
+  
         <p>
-          {/* Learn more about our history and ministries by visiting our official page: */}
+
           <Link
             className="font-medium underline underline-offset-4"
             href="https://cmfi.org"
@@ -46,7 +38,7 @@ export const Overview = () => {
           </Link>
           .
         </p>
-      </div>
+      </div> */}
     </motion.div>
   );
 };
